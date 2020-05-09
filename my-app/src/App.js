@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/Drawer/SideDrawer';
 import BackDrop from './components/BackDrop/BackDrop';
+import './App.css';
+import TodoList from './components/TodoList/TodoList';
 
 class App extends Component {
   state = {
@@ -19,7 +21,6 @@ class App extends Component {
   }
 
   render() {
-    let sideDrawer;
     let backdrop;
 
     if(this.state.sideDrawerOpen){
@@ -27,12 +28,12 @@ class App extends Component {
     }
 
     return (
-      <div style={{height: '100%'}}>
+      <div className="App">
         <Toolbar drawerClickHandler={this.drawerToggleClickedHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backdrop}
-        <main style={{marginTop: '64px'}}>
-        <p>TEST TEST TEST</p>
+        <main className="Main">
+          <TodoList />
         </main>
       </div>
     );
