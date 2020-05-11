@@ -1,8 +1,8 @@
 css,
 immutable over array/object,
-delete new method,
+delete new method, ./
 scss
 sass
-double click = delete,
-click = toggle,
+double click = delete, ./
+click = toggle, ./
 
