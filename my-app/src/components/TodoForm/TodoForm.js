@@ -27,13 +27,13 @@ export default class TodoForm extends React.Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <input 
+                <input
                 name="text"
                 value={this.state.text}
                 onChange={this.handleChange}
                 placeholder="Add item to your todo list"
                 />
-                <button onClick={this.handleSubmit}>Add Todo</button>
+                <button className="AddButton" onClick={this.handleSubmit}>Add Todo</button>
             </form>
         )
     }

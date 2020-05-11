@@ -38,11 +38,15 @@ export default class TodoList extends React.Component{
 
     render(){
         return(
-            <div>
-                <TodoForm onSubmit={this.addTodo}/>
+            <div className="TodoPage">
+                <div>
+                    <TodoForm onSubmit={this.addTodo}/>
+                </div>
+                <div>
                     {this.state.todos.map(todo => (
                         <Todo key={todo.id} toggleComplete={()=> this.toggleComplete(todo.id)} todo={todo} deleteTodo={() => this.deleteTodo(todo.id)}/>
                     ))}
+                </div>
             </div>
         )
     }
