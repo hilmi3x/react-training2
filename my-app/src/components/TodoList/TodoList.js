@@ -12,41 +12,37 @@ export default class TodoList extends React.Component{
         this.setState({
             todos: [todo, ...this.state.todos]
         })
-    }
+    };
 
     toggleComplete = id => {
         this.setState({
             todos: this.state.todos.map(todo => {
                 if (todo.id === id) {
-                    if(todo.complete === false) {
                         return {
                             ...todo,
                             complete: !todo.complete
-                        };
-                    }else{
-                        this.deleteTodo(id);
-                    }
+                        };    
                 }else{
                     return todo;
                 };
             })
         })
-    }
+    };
 
     deleteTodo(id){
         console.log(111,id);
         const todos = this.state.todos.filter(todo => todo.id !== id);
         this.setState({
             todos: todos})
-    }
+    };
 
     render(){
         return(
             <div>
                 <TodoForm onSubmit={this.addTodo}/>
-                {this.state.todos.map(todo => (
-                    <Todo key={todo.id} toggleComplete={()=> this.toggleComplete(todo.id)} todo={todo}/>
-                ))}
+                    {this.state.todos.map(todo => (
+                        <Todo key={todo.id} toggleComplete={()=> this.toggleComplete(todo.id)} todo={todo} deleteTodo={() => this.deleteTodo(todo.id)}/>
+                    ))}
             </div>
         )
     }

@@ -8,7 +8,7 @@ import TodoList from './components/TodoList/TodoList';
 class App extends Component {
   state = {
     sideDrawerOpen: false
-  }
+  };
 
   drawerToggleClickedHandler = () => {
     this.setState((prevState) => {
@@ -18,7 +18,7 @@ class App extends Component {
 
   backdropClickHandler = () => {
     this.setState({sideDrawerOpen: false});
-  }
+  };
 
   render() {
     let backdrop;
