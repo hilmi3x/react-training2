@@ -1,8 +1,13 @@
-css,
-immutable over array/object,
 delete new method, ./
-scss
 sass
 double click = delete, ./
 click = toggle, ./
+modifier
+className="a****A****"
+BEM
+Immutable todos: I.map()
+klasörler iç içe olmalı
+delete <-- filter
+
+
 

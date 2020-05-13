@@ -1,11 +1,12 @@
 import React from 'react';
 import './TodoList.css';
-import TodoForm from '../TodoForm/TodoForm';
+import TodoForm from './TodoForm/TodoForm';
 import Todo from './Todo';
+import Immutable from 'immutable';
 
 export default class TodoList extends React.Component{
     state = {
-        todos: []
+        todos: Immutable.List()
     };
 
     addTodo = todo => {
@@ -30,21 +31,21 @@ export default class TodoList extends React.Component{
     };
 
     deleteTodo(id){
-        console.log(111,id);
         const todos = this.state.todos.filter(todo => todo.id !== id);
         this.setState({
-            todos: todos})
+            todos: todos
+        })
     };
 
     render(){
         return(
-            <div className="TodoPage">
+            <div className="todoPage">
                 <div>
                     <TodoForm onSubmit={this.addTodo}/>
                 </div>
                 <div>
                     {this.state.todos.map(todo => (
-                        <Todo key={todo.id} toggleComplete={()=> this.toggleComplete(todo.id)} todo={todo} deleteTodo={() => this.deleteTodo(todo.id)}/>
+                        <Todo key={todo.id} id={todo.id} toggleComplete={()=> this.toggleComplete(todo.id)} todo={todo} deleteTodo={() => this.deleteTodo(todo.id)}/>
                     ))}
                 </div>
             </div>

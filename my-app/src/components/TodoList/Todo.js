@@ -1,12 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default props => (
-    <div 
-        className="Todoitems"
+    <Link to={`/routePage/${this.props.id}`}
+        className="todoItems"
         style={{textDecoration: props.todo.complete ? "line-through" : ""}}
         onClick={props.toggleComplete}
         onDoubleClick={props.deleteTodo}
     >
-        {props.todo.text}
-    </div>
+        <span>{props.todo.text}</span>
+    </Link>
 );

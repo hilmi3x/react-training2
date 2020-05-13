@@ -15,7 +15,7 @@ export default class TodoForm extends React.Component{
     handleSubmit = event => {
         event.preventDefault();
         this.props.onSubmit({
-            id: this.state.text,
+            id: Math.random(),
             text: this.state.text,
             complete: false
         })
@@ -33,7 +33,7 @@ export default class TodoForm extends React.Component{
                 onChange={this.handleChange}
                 placeholder="Add item to your todo list"
                 />
-                <button className="AddButton" onClick={this.handleSubmit}>Add Todo</button>
+                <button className="addButton" onClick={this.handleSubmit}>Add Todo</button>
             </form>
         )
     }

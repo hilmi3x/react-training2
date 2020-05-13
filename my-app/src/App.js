@@ -4,6 +4,8 @@ import SideDrawer from './components/Drawer/SideDrawer';
 import BackDrop from './components/BackDrop/BackDrop';
 import './App.css';
 import TodoList from './components/TodoList/TodoList';
+import {BrowserRouter, Route} from 'react-router-dom';
+import RoutePage from './components/RoutePage/RoutePage.js';
 
 class App extends Component {
   state = {
@@ -28,14 +30,16 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Toolbar drawerClickHandler={this.drawerToggleClickedHandler}/>
-        <SideDrawer show={this.state.sideDrawerOpen}/>
-        {backdrop}
-        <main className="Main">
-          <TodoList />
-        </main>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Toolbar drawerClickHandler={this.drawerToggleClickedHandler}/>
+          <SideDrawer show={this.state.sideDrawerOpen}/>
+          {backdrop}
+          <Route exact path="/" component={TodoList} />
+          <Route path="/routePage/:id" component={RoutePage} />
+        </div>
+      </BrowserRouter>
+      
     );
   }
   }

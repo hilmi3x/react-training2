@@ -1,11 +1,12 @@
-.TodoPage {
+.todoPage {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     border: 2cm;
     flex-direction: column;
 }
 
-.Todoitems{
+.todoItems{
     border-style: solid;
     cursor: pointer;
     margin-top: 10px;
