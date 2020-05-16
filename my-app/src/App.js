@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/Drawer/SideDrawer';
 import BackDrop from './components/BackDrop/BackDrop';
-import './App.css';
+import './App.scss';
 import TodoList from './components/TodoList/TodoList';
 import {BrowserRouter, Route} from 'react-router-dom';
 import RoutePage from './components/RoutePage/RoutePage.js';
@@ -31,7 +31,7 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="app">
           <Toolbar drawerClickHandler={this.drawerToggleClickedHandler}/>
           <SideDrawer show={this.state.sideDrawerOpen}/>
           {backdrop}

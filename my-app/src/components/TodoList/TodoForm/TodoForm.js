@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoForm.css';
+import './TodoForm.scss';
 
 export default class TodoForm extends React.Component{
     state = {

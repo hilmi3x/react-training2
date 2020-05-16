@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoList.css';
+import './TodoList.scss';
 import TodoForm from './TodoForm/TodoForm';
 import Todo from './Todo';
 import Immutable from 'immutable';
@@ -39,11 +39,11 @@ export default class TodoList extends React.Component{
 
     render(){
         return(
-            <div className="todoPage">
+            <div className="todo-page">
                 <div>
                     <TodoForm onSubmit={this.addTodo}/>
                 </div>
-                <div>
+                <div className="todo-page__list">
                     {this.state.todos.map(todo => (
                         <Todo key={todo.id} id={todo.id} toggleComplete={()=> this.toggleComplete(todo.id)} todo={todo} deleteTodo={() => this.deleteTodo(todo.id)}/>
                     ))}

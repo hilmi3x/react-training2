@@ -1,8 +1,13 @@
-.todoPage {
+.todo-page {
     margin-top: 100px;
     display: flex;
     justify-content: center;
     border: 2cm;
+    flex-direction: column;
+}
+
+.todo-page__list{
+    display: flex;
     flex-direction: column;
 }
 
